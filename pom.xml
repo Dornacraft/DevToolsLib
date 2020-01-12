@@ -1,4 +1,3 @@
-IntelliJ IDEA  
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ MIT License
@@ -29,33 +28,35 @@ IntelliJ IDEA
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>net.fallenvaders.fallenvaderslib</groupId>
-  <artifactId>fallenvaderslib</artifactId>
+  <groupId>fr.dornacraft.devtoolslib</groupId>
+  <artifactId>devtoolslib</artifactId>
   <version>0.1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>FallenVadersLib</name>
-  <description>Librairie Bukkit du serveur FallenVaders</description>
-  <inceptionYear>2019</inceptionYear>
-  <url>https://github.com/FallenVaders/FallenVadersLib</url>
+  <name>DevToolsLib</name>
+  <description>Librairie Java basée sur Bukkit comportant des outils simplifiant et/ou astreignant le développement des plugins sur le serveur Dornacraft</description>
+  <inceptionYear>2020</inceptionYear>
+  <url>https://github.com/Dornacraft/DevToolsLib</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <powermock.version>2.0.4</powermock.version>
+    <minecraft.prefix>MC</minecraft.prefix>
     <minecraft.version>1.12.2</minecraft.version>
+    <server.prefix>DC</server.prefix>
   </properties>
 
   <licenses>
     <license>
       <name>MIT</name>
-      <url>https://github.com/FallenVaders/FallenVadersLib/blob/master/LICENSE</url>
+      <url>https://github.com/FallenVaders/DevToolsLib/blob/master/LICENSE</url>
       <distribution>manual</distribution>
     </license>
   </licenses>
 
   <issueManagement>
     <system>GitHub Issues</system>
-    <url>https://github.com/FallenVaders/FallenVadersLib/issues</url>
+    <url>https://github.com/Dornacraft/DevToolsLib/issues</url>
   </issueManagement>
 
   <developers>
@@ -107,12 +108,6 @@ IntelliJ IDEA
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.jimfs</groupId>
-      <artifactId>jimfs</artifactId>
-      <version>1.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -173,7 +168,7 @@ IntelliJ IDEA
         <artifactId>maven-jar-plugin</artifactId>
         <version>3.1.2</version>
         <configuration>
-          <finalName>${project.name}-${project.version}.MC-${minecraft.version}</finalName>
+          <finalName>${server.prefix}-${project.name}-${project.version}.${minecraft.prefix}-${minecraft.version}</finalName>
         </configuration>
       </plugin>
       <plugin>
