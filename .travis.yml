@@ -9,9 +9,9 @@ git:
   submodules: false
 before_install:
 - sudo apt-get install jq
-- bash <(curl -Ls https://coverage.codacy.com/get.sh)
 script:
 - mvn test -B
+- bash <(curl -Ls https://coverage.codacy.com/get.sh)
 after_success:
 - java -jar codacy-coverage-reporter-assembly.jar report -l Java -r target/site/jacoco/jacoco.xml
 notifications:
