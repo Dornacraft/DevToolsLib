@@ -9,11 +9,11 @@ git:
   submodules: false
 before_install:
 - sudo apt-get install jq
+- curl -LSs $(curl -LSs https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r '.assets | map({name, browser_download_url} | select(.name | endswith(".jar"))) | .[0].browser_download_url')" -o codacy-coverage-reporter-assembly.jar
 script:
 - mvn test -B
 after_success:
 - java -jar codacy-coverage-reporter-assembly.jar report -l Java -r target/site/jacoco/jacoco.xml
-- bash <(curl -Ls https://coverage.codacy.com/get.sh)
 notifications:
   slack:
     secure: XSCDpbAnIe3m4Dq/Ka04eIqYp+IK5CSKnnzb1u+TLz2sOTdZ954UUuYgB5PMfJVZxr+3pJ7aLk5T9AceCipWdYPIz6t/5MzhSydyqJACPszdX6kdiotCo1rltCNG/0uK84XbcT71IcyIst6CEIqJ3Ebqt7P0Y+bzh37vPRZU42FE0SJopEZq6zBmFDx/wvrb8uWDiT0AvGpTK4ns7eisB7vEgupxWGcJrJ2RxVP1xMKe8tsCgY5BREL1mvNAdHiB5NKQOLMq7HbthFjfyi++uBjPHbN2U3dYNRw8v4Qy5IvDh7LdvucX5FQeigEhsmDR5HPRy5seCaxQC01K512e/7asWfdHWiPYVoOvuu3qdCEMDkeBsOORCR2+cgMLUDrhgXolYU6XVTDHt3FIyAszrV05VN8rt+Z1eaxplzSc/tFs6huGflaDeJ9tcBOMclPBY0Vst6c9gfdcaQCE2ZelmtNkqFzn61LITA6IoolXYoXv/TRRkOA0OSih4KdAKMXISHJyXU7Oq5zKDRWTZOa1mxL6l9AKC2sRSLGthrYuT2qe+PZ4X9SYt4PzwU6gr/HKKm0QTKzql7aZCrRzcH0aPwDSIUzLeG9OtI/0acCx3flVSm78ORVkG7nol2doazOdFjgqmH30IuzCnnNMX8jqrA0pGT+PAGApbhMVfzwmh0E=
