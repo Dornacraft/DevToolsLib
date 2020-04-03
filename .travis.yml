@@ -8,9 +8,7 @@ jdk:
 git:
   submodules: false
 before_install:
-- sudo apt-get install jq
-- sudo apt-get install curl
-- curl -LSs $(curl -LSs https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r '.assets | map({name, browser_download_url} | select(.name | endswith(".jar"))) | .[0].browser_download_url')" -o codacy-coverage-reporter-assembly.jar
+- bash <(curl -Ls https://coverage.codacy.com/get.sh)
 script:
 - mvn test -B
 after_success:
