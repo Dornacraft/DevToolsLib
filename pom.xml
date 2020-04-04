@@ -34,9 +34,7 @@
     <packaging>jar</packaging>
 
     <name>DevToolsLib</name>
-    <description>Librairie Java basée sur Bukkit comportant des outils simplifiant et/ou astreignant le développement
-        des plugins sur le serveur Dornacraft
-    </description>
+    <description>Librairie Java basée sur Bukkit et PaperMC comportant des outils simplifiant le développement de plugins Minecraft</description>
     <inceptionYear>2020</inceptionYear>
     <url>https://github.com/Dornacraft/DevToolsLib</url>
 
@@ -46,6 +44,7 @@
         <minecraft.prefix>MC</minecraft.prefix>
         <minecraft.version>1.12.2</minecraft.version>
         <server.prefix>DC</server.prefix>
+        <plugin.package>${project.groupId}</plugin.package>
     </properties>
 
     <licenses>
@@ -79,17 +78,17 @@
 
     <repositories>
         <repository>
-            <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+            <id>papermc</id>
+            <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
     </repositories>
 
     <dependencies>
         <!-- provided -->
         <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.12.2-R0.1-SNAPSHOT</version>
+            <groupId>com.destroystokyo.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>1.15.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
