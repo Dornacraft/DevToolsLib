@@ -30,7 +30,7 @@
 
     <groupId>fr.dornacraft.devtoolslib</groupId>
     <artifactId>devtoolslib</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>DevToolsLib</name>

@@ -1,5 +1,5 @@
 name: ${project.name}
-version: 1.0.0
+version: ${project.version}
 description: ${project.description}
 author: Voltariuss
 website: https://www.dornacraft.fr
