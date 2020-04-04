@@ -4,5 +4,5 @@ description: ${project.description}
 author: Voltariuss
 website: https://www.dornacraft.fr
 
-main: ${plugin.package}
+main: ${plugin.package}.${project.name}
 database: false
