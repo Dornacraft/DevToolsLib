@@ -1,0 +1,7 @@
+## Database informations for DBMS MySQL and MariaDB only
+database:
+    host: ''
+    database: ''
+    user: ''
+    password: ''
+
