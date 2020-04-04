@@ -42,7 +42,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <powermock.version>2.0.4</powermock.version>
         <minecraft.prefix>MC</minecraft.prefix>
-        <minecraft.version>1.12.2</minecraft.version>
+        <minecraft.version>1.15.2</minecraft.version>
         <server.prefix>DC</server.prefix>
         <plugin.package>${project.groupId}</plugin.package>
     </properties>
