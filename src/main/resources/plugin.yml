@@ -6,3 +6,4 @@ website: https://www.dornacraft.fr
 
 main: ${plugin.package}.${project.name}
 database: false
+api-version: ${minecraft.version}
